@@ -60,7 +60,19 @@ TsdbClient.prototype.getMetics = function (database, options) {
       params: params,
       config: options.config
     });
-};  
+};
+TsdbClient.prototype.listdataBases = function (options) {
+    var options = options || {};
+    // var params = {
+    //     database: database,
+    //     query:''
+    // };
+    
+    return this.sendRequest('GET', '/v1/database', {   
+      //params: params,
+      config: options.config
+    });
+};    
 
 // --- E N D ---
 
